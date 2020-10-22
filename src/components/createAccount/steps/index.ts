@@ -1,3 +1,7 @@
-export { default as Step1 } from './CreateAccountStep1';
-export { default as Step2 } from './CreateAccountStep2';
-export { default as Step3 } from './CreateAccountStep3';
+export { default as Step1 } from './StepFirst';
+export { default as Step2 } from './StepPersonal';
+export { default as Step3 } from './StepThird';
+
+export type CreateAccountStepProps = {
+    handleNext(): void;
+};

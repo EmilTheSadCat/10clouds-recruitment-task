@@ -4,7 +4,7 @@ import { Step1, Step2, Step3 } from './steps';
 import StepIndicator from '../stepIndicator/StepIndicator';
 import './_createAccount.scss';
 
-const createAccountSteps = ['A', 'Personal', 'C'];
+const createAccountSteps = ['First Step', 'Personal', 'Third Step'];
 
 const CreateAccount: React.FC = () => {
     const [currentStep, setCurrentStep] = useState(1);
@@ -19,10 +19,10 @@ const CreateAccount: React.FC = () => {
 
     return (
         <section className="create-account">
-            <h3 className="create-account__title">Your Account</h3>
+            <h3 className="create-account__title">Your account</h3>
             <div className="create-account__wrapper">
-                <div className="create-account-step create-account-step--2">
-                    <Step />
+                <div className={`create-account-step create-account-step--${currentStep}`}>
+                    <Step handleNext={handleNextStep} />
                 </div>
                 <StepIndicator currentStep={currentStep} totalSteps={createAccountSteps} />
             </div>

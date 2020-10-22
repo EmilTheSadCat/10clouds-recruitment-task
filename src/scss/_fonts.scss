@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
-
-html,
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+*,
+html {
     font-family: $font-primary;
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-regular;
 }

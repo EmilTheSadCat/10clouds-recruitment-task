@@ -1,0 +1,62 @@
+@import '../../scss/variables';
+
+.button {
+    cursor: pointer;
+    &--default {
+        // backgorund:
+    }
+    &__container > * {
+        transition: transform 0.1s ease-in-out;
+    }
+
+    &:hover .button__container > * {
+        transform: scale(1.03);
+    }
+
+    &:active .button__container > * {
+        transform: scale(1.03) translateY(2px);
+    }
+
+    &:disabled {
+        opacity: 0.3;
+
+        &:active .button__container > *,
+        &:hover .button__container > * {
+            transform: none !important;
+        }
+    }
+}
+
+.step-button {
+    height: 50px;
+    width: 237px;
+    display: flex;
+    background: linear-gradient(90deg, #8658eb -0.42%, $color-primary 100.42%);
+    box-shadow: 0px 20px 25px rgba(32, 31, 54, 0.15);
+
+    &__left {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            text-transform: uppercase;
+            font-weight: $font-weight-medium;
+            color: $color-gray-light;
+        }
+    }
+
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50px;
+        background-color: #7841f4;
+
+        img {
+            width: 20px;
+        }
+    }
+}

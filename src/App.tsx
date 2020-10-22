@@ -4,7 +4,7 @@ import CreateAccount from './components/createAccount/CreateAccount';
 
 function App() {
     return (
-        <div className="App">
+        <div className="app-wrapper">
             <MainView>
                 <CreateAccount />
             </MainView>
