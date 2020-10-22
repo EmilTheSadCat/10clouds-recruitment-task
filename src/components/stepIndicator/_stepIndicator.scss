@@ -1,0 +1,14 @@
+.step-indicator {
+    position: absolute;
+    right: 0;
+
+    transform: translateX(100%);
+    &__element {
+    }
+
+    &__bar {
+    }
+
+    &__title {
+    }
+}

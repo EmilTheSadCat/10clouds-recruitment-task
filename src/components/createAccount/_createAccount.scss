@@ -1,0 +1,74 @@
+@import '../../scss/variables';
+
+.create-account {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__wrapper {
+        width: 728px;
+        height: 550px;
+        position: relative;
+        background-color: white;
+    }
+
+    &__title {
+        font-weight: $font-weight-light;
+        color: white;
+        font-size: 48px;
+        margin-top: 56px;
+        margin-bottom: 48px;
+    }
+}
+
+.create-account-step {
+    display: flex;
+
+    $self: &;
+    &--2 {
+        height: 100%;
+        width: 100%;
+
+        #{ $self } {
+            &__visual {
+                display: none;
+
+                @media only screen and (min-width: $breakpoint-desktop) {
+                    display: block;
+                    width: 256px;
+                    height: 100%;
+                    background-color: #202020;
+                    background-image: url('/img/create-account-bg-photo.png');
+                    position: relative;
+
+                    &::after {
+                        position: relative;
+                        content: url('/img/create-account-bg-lines.png');
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        z-index: 10000;
+                    }
+                }
+            }
+
+            &__content {
+                flex: 1;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(
+                        5.88deg,
+                        rgba(165, 165, 180, 0.15) 4.19%,
+                        rgba(228, 235, 239, 0.15) 95.81%,
+                        rgba(231, 232, 238, 0.15) 95.81%,
+                        rgba(231, 232, 238, 0.15) 95.81%
+                    ),
+                    #fcfcfd;
+            }
+        }
+    }
+}
