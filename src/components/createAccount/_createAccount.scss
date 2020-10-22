@@ -24,9 +24,9 @@
 }
 
 .create-account-step {
+    $self: &;
     display: flex;
 
-    $self: &;
     &--2 {
         height: 100%;
         width: 100%;
@@ -68,6 +68,18 @@
                         rgba(231, 232, 238, 0.15) 95.81%
                     ),
                     #fcfcfd;
+                position: relative;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 10%;
+                    width: 70px;
+                    transform: translateY(-50%);
+                    height: 2px;
+                    background-color: $color-secondary;
+                }
             }
         }
     }
