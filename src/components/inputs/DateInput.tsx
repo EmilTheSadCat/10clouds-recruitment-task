@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useWindowWidth } from '../../utils/customHooks';
-import { formatMobilePhoneNumber, prefixNumberWith0 } from '../../utils/format';
+import { prefixNumberWith0 } from '../../utils/format';
+import InputError from './InputError';
+import getDaysInMonth from 'date-fns/getDaysInMonth';
 import './_inputs.scss';
 
 const months = [
@@ -23,7 +25,8 @@ type DateInputProps = {
     day: string;
     month: string;
     year: string;
-    onChange({}: { name: string; value: string }): void;
+    errorMessage?: string;
+    onChange(onChangeParams: { name: string; value: string }): void;
     additionalClassName?: string;
 };
 
@@ -32,11 +35,14 @@ const DateInput: React.FC<DateInputProps> = ({
     day,
     month,
     year,
+    errorMessage = '',
     onChange,
     additionalClassName = '',
 }) => {
     const [width] = useWindowWidth();
     const isDesktop = width >= 992;
+
+    useEffect(() => {}, [day, year]);
 
     return (
         <div className={`date-input ${additionalClassName}`}>
@@ -47,7 +53,7 @@ const DateInput: React.FC<DateInputProps> = ({
                     name="birthDateDay"
                     value={prefixNumberWith0(Number(day))}
                     min="1"
-                    max="31"
+                    max={getDaysInMonth(new Date(Number(year), Number(month) - 1))}
                     onChange={(e) => onChange(e.target)}
                     className="date-input__day"
                 />
@@ -76,6 +82,7 @@ const DateInput: React.FC<DateInputProps> = ({
                     className="date-input__year"
                 />
             </div>
+            <InputError errorMessage={errorMessage} />
         </div>
     );
 };

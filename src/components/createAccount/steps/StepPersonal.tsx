@@ -12,8 +12,8 @@ const StepPersonal: React.FC<CreateAccountStepProps> = ({ handleNext }) => {
                 <p className="create-account-step__description">
                     Provide personal information so that we can create a new account for you.
                 </p>
-                <Form />
-                <StepButton handleClick={() => {}} />
+                <Form handleNext={handleNext} />
+                <StepButton handleClick={() => {}} formSubmitId="createAccountForm" />
             </div>
         </>
     );

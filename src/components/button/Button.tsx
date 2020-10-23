@@ -7,11 +7,13 @@ export type ButtonProps = {
     buttonRef?: any;
     additionalClassName?: string;
     disabled?: boolean;
+    formSubmitId?: string;
 };
 
 const Button: React.FC<ButtonProps> = ({
     handleClick,
     variant = 'default',
+    formSubmitId = '',
     additionalClassName = '',
     children,
     buttonRef,
@@ -21,6 +23,8 @@ const Button: React.FC<ButtonProps> = ({
         <button
             className={`button button--${variant} ${additionalClassName}`}
             onClick={handleClick}
+            role={formSubmitId ? 'submit' : 'button'}
+            form={formSubmitId}
             ref={buttonRef}
             disabled={disabled}
         >

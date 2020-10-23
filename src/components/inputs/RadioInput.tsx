@@ -1,4 +1,5 @@
 import React from 'react';
+import InputError from './InputError';
 import './_inputs.scss';
 
 export type RadioInputOptions = {
@@ -9,7 +10,8 @@ export type RadioInputOptions = {
 type RadioInputProps = {
     label: string;
     name: string;
-    onChange({}: { name: string; value: string }): void;
+    onChange(onChangeParams: { name: string; value: string }): void;
+    errorMessage?: string;
     options: RadioInputOptions[];
     additionalClassName?: string;
 };
@@ -18,6 +20,7 @@ const RadioInput: React.FC<RadioInputProps> = ({
     label,
     name,
     onChange,
+    errorMessage = '',
     options = [],
     additionalClassName = '',
 }) => {
@@ -25,21 +28,22 @@ const RadioInput: React.FC<RadioInputProps> = ({
         <div className={`radio-input ${additionalClassName}`}>
             <span className="label">{label}</span>
             <div className="radio-input__container">
-                {options.map((option) => (
-                    <>
+                {options.map(({ label, value }) => (
+                    <React.Fragment key={label}>
                         <input
                             type="radio"
                             name={name}
-                            id={option.label}
-                            value={option.value}
+                            id={label}
+                            value={value}
                             onChange={(e) => onChange(e.target)}
                         />
-                        <label htmlFor={option.label}>
-                            <span>{option.value}</span>
+                        <label htmlFor={label}>
+                            <span>{value}</span>
                         </label>
-                    </>
+                    </React.Fragment>
                 ))}
             </div>
+            <InputError errorMessage={errorMessage} />
         </div>
     );
 };
