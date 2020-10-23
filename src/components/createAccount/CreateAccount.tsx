@@ -7,7 +7,7 @@ import './_createAccount.scss';
 const createAccountSteps = ['First Step', 'Personal', 'Third Step'];
 
 const CreateAccount: React.FC = () => {
-    const [currentStep, setCurrentStep] = useState(1);
+    const [currentStep, setCurrentStep] = useState(2);
 
     const stepComponents = [Step1, Step2, Step3];
     const Step = stepComponents[currentStep - 1];

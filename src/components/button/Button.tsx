@@ -23,7 +23,6 @@ const Button: React.FC<ButtonProps> = ({
             onClick={handleClick}
             ref={buttonRef}
             disabled={disabled}
-            data-testid="button"
         >
             <div className="button__container">{children}</div>
         </button>

@@ -25,6 +25,18 @@
         width: 100%;
 
         #{ $self } {
+            &__description {
+                line-height: 24px;
+                margin-bottom: 30px;
+                letter-spacing: 0.3px;
+                font-size: 14px;
+
+                @media only screen and (min-width: $breakpoint-desktop) {
+                    margin-bottom: 58px;
+                    width: 85%;
+                }
+            }
+
             &__visual {
                 display: none;
 
@@ -32,19 +44,20 @@
                     display: block;
                     width: 256px;
                     height: 100%;
-                    background-color: #202020;
+                    background-color: $color-off-black;
                     background-image: url('/img/create-account-bg-photo.png');
                     position: relative;
 
                     &::after {
                         position: relative;
                         content: url('/img/create-account-bg-lines.png');
-                        height: 100%;
                         width: 100%;
                         display: flex;
                         justify-content: flex-end;
                         align-items: center;
                         z-index: 10000;
+                        margin-top: 110px;
+                        transform: scale(0.97);
                     }
                 }
             }
@@ -62,6 +75,15 @@
                     ),
                     #fcfcfd;
                 position: relative;
+                padding: 15px 15px 80px 15px;
+
+                @media only screen and (min-width: $breakpoint-md) {
+                    padding: 30px 30px 50px 30px;
+                }
+
+                @media only screen and (min-width: $breakpoint-desktop) {
+                    padding: 40px 50px 78px 50px;
+                }
 
                 &::after {
                     content: '';

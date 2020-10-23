@@ -1,12 +1,14 @@
 @import '../../scss/variables';
 
+$step-indicator-transition: all 0.3s ease-in-out;
+
 .step-indicator {
     display: none;
 
     @media only screen and (min-width: $breakpoint-desktop) {
         position: absolute;
         right: 0;
-        top: 110px;
+        top: 119px;
         height: min-content;
 
         transform: translate(100%);
@@ -31,10 +33,12 @@
             opacity: 0.25;
             width: 25px;
             height: 2px;
+            transition: $step-indicator-transition;
 
             &.active {
                 background-color: $color-secondary;
                 opacity: 1;
+                transition: $step-indicator-transition;
             }
         }
 
@@ -45,9 +49,17 @@
         }
 
         &__title {
+            opacity: 0;
+            pointer-events: none;
             margin-top: 4px;
             margin-left: 8px;
             color: $color-white;
+            transition: $step-indicator-transition;
+
+            &.active {
+                opacity: 1;
+                transition: $step-indicator-transition;
+            }
         }
     }
 }

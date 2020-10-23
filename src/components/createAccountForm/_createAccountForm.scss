@@ -1,0 +1,9 @@
+@import '../../scss/variables';
+
+.create-account-form {
+    & > * {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+}

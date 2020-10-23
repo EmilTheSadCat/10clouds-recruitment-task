@@ -1,3 +1,25 @@
 .app-wrapper {
     overflow-x: hidden;
 }
+
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+body:not(.show-tab-focus) button:focus,
+body:not(.show-tab-focus) input:focus,
+body:not(.show-tab-focus) select:focus,
+body:not(.show-tab-focus) textarea:focus {
+    outline: none;
+}
+
+::selection {
+    color: $color-white;
+    background: $color-primary;
+}

@@ -17,8 +17,10 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, totalSteps }
                 return (
                     <div className="step-indicator__element" key={index}>
                         <span className={`step-indicator__bar ${activeClass}`}></span>
-                        <span className="step-indicator__step-number">{prefixNumberWith0(index + 1)}</span>
-                        {isActive && <span className="step-indicator__title">{step}</span>}
+                        <span className="step-indicator__step-number">
+                            {prefixNumberWith0(index + 1)}
+                        </span>
+                        <span className={`step-indicator__title ${activeClass}`}>{step}</span>
                     </div>
                 );
             })}
