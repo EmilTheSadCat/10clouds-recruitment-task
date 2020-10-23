@@ -23,3 +23,8 @@ body:not(.show-tab-focus) textarea:focus {
     color: $color-white;
     background: $color-primary;
 }
+
+html {
+    font-size: 62.5%; // 10px //
+    scroll-behavior: smooth;
+}

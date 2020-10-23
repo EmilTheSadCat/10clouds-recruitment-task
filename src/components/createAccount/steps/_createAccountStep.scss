@@ -15,7 +15,7 @@
         transform: translate(50%, 50%);
 
         @media only screen and (min-width: $breakpoint-desktop) {
-            right: -50px;
+            right: -5rem;
             transform: translateY(50%);
         }
     }
@@ -26,13 +26,13 @@
 
         #{ $self } {
             &__description {
-                line-height: 24px;
-                margin-bottom: 30px;
+                line-height: 2.4rem;
+                margin-bottom: 3rem;
                 letter-spacing: 0.3px;
-                font-size: 14px;
+                font-size: 1.4rem;
 
                 @media only screen and (min-width: $breakpoint-desktop) {
-                    margin-bottom: 58px;
+                    margin-bottom: 5.8rem;
                     width: 85%;
                 }
             }
@@ -42,7 +42,7 @@
 
                 @media only screen and (min-width: $breakpoint-desktop) {
                     display: block;
-                    width: 256px;
+                    width: 25.6rem;
                     height: 100%;
                     background-color: $color-off-black;
                     background-image: url('/img/create-account-bg-photo.png');
@@ -56,7 +56,7 @@
                         justify-content: flex-end;
                         align-items: center;
                         z-index: 10000;
-                        margin-top: 110px;
+                        margin-top: 11rem;
                         transform: scale(0.97);
                     }
                 }
@@ -75,14 +75,14 @@
                     ),
                     #fcfcfd;
                 position: relative;
-                padding: 15px 15px 80px 15px;
+                padding: 1.5rem 1.5rem 8rem 1.5rem;
 
                 @media only screen and (min-width: $breakpoint-md) {
-                    padding: 30px 30px 50px 30px;
+                    padding: 3rem 3rem 5rem 3rem;
                 }
 
                 @media only screen and (min-width: $breakpoint-desktop) {
-                    padding: 40px 50px 78px 50px;
+                    padding: 4rem 5rem 7.8rem 5rem;
                 }
 
                 &::after {
@@ -90,7 +90,7 @@
                     position: absolute;
                     top: 0;
                     left: 10%;
-                    width: 70px;
+                    width: 7rem;
                     transform: translateY(-50%);
                     height: 2px;
                     background-color: $color-secondary;

@@ -8,7 +8,7 @@ $step-indicator-transition: all 0.3s ease-in-out;
     @media only screen and (min-width: $breakpoint-desktop) {
         position: absolute;
         right: 0;
-        top: 119px;
+        top: 11.9rem;
         height: min-content;
 
         transform: translate(100%);
@@ -16,22 +16,22 @@ $step-indicator-transition: all 0.3s ease-in-out;
         flex-direction: column;
 
         &__element {
-            height: 34px;
+            height: 3.4rem;
 
             &:not(:last-child) {
-                margin-bottom: 42px;
+                margin-bottom: 4.2rem;
             }
         }
 
         span {
             display: block;
-            font-size: 11px;
+            font-size: 1.1rem;
         }
 
         &__bar {
             background-color: $color-gray-light;
             opacity: 0.25;
-            width: 25px;
+            width: 2.5rem;
             height: 2px;
             transition: $step-indicator-transition;
 
@@ -43,16 +43,16 @@ $step-indicator-transition: all 0.3s ease-in-out;
         }
 
         &__step-number {
-            margin-top: 8px;
-            margin-left: 8px;
+            margin-top: .8rem;
+            margin-left: .8rem;
             color: $color-white;
         }
 
         &__title {
             opacity: 0;
             pointer-events: none;
-            margin-top: 4px;
-            margin-left: 8px;
+            margin-top: .4rem;
+            margin-left: .8rem;
             color: $color-white;
             transition: $step-indicator-transition;
 
