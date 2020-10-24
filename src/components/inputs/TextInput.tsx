@@ -17,7 +17,7 @@ const TextInput: React.FC<TextInputProps> = ({
 }) => {
     const errorClassName = errorMessage ? 'error' : '';
     return (
-        <div className={`text-input ${additionalClassName} `}>
+        <div className={`text-input ${additionalClassName} `} data-testid="textInput">
             <label className="label" htmlFor="name" style={{ marginBottom: 0 }}>
                 {label}
             </label>

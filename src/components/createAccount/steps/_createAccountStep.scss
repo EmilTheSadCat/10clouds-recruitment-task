@@ -89,11 +89,15 @@
                     content: '';
                     position: absolute;
                     top: 0;
-                    left: 10%;
+                    left: 1.6rem;
                     width: 7rem;
                     transform: translateY(-50%);
                     height: 2px;
                     background-color: $color-secondary;
+
+                    @media only screen and (min-width: $breakpoint-desktop) {
+                        left: 5rem;
+                    }
                 }
             }
         }

@@ -142,6 +142,20 @@ select {
             margin-left: 0.7rem;
         }
 
+        &:before {
+            transition: all 0.5s cubic-bezier(0.7, -0.51, 0.42, 3.2);
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: 0;
+            top: 50%;
+            transform: translate(50%, -50%);
+            background-color: $color-secondary;
+            z-index: 100;
+        }
+
         &:after {
             content: '';
             box-sizing: border-box;
@@ -167,7 +181,7 @@ select {
         }
     }
     &__prefix {
-        width: 10.5rem;
+        width: 11.5rem;
         margin-right: 2rem;
 
         input {
@@ -191,9 +205,12 @@ select {
     border-bottom: 2px solid $color-inactive-input;
     height: 4rem;
     position: relative;
+    transition-property: border-color color;
+    transition: 0.5s ease-in-out;
 
     &:focus {
         border-color: $color-primary;
+        transition: border-color 0.5s ease-in-out;
     }
 
     &.error {

@@ -44,8 +44,12 @@ const DateInput: React.FC<DateInputProps> = ({
 
     useEffect(() => {}, [day, year]);
 
+    const daysInMonth = () => {
+        return getDaysInMonth(new Date(Number(year), Number(month) - 1));
+    };
+
     return (
-        <div className={`date-input ${additionalClassName}`}>
+        <fieldset className={`date-input ${additionalClassName}`} data-testid="dateInput">
             <label className="label">{label}</label>
             <div className="date-input__container">
                 <input
@@ -53,7 +57,7 @@ const DateInput: React.FC<DateInputProps> = ({
                     name="birthDateDay"
                     value={prefixNumberWith0(Number(day))}
                     min="1"
-                    max={getDaysInMonth(new Date(Number(year), Number(month) - 1))}
+                    max={daysInMonth()}
                     onChange={(e) => onChange(e.target)}
                     className="date-input__day"
                 />
@@ -83,7 +87,7 @@ const DateInput: React.FC<DateInputProps> = ({
                 />
             </div>
             <InputError errorMessage={errorMessage} />
-        </div>
+        </fieldset>
     );
 };
 

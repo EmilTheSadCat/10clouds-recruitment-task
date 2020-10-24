@@ -23,7 +23,7 @@ const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({
 }) => {
     const errorClassName = errorMessagePrefix || errorMessageNumber ? 'error' : '';
     return (
-        <div className={`phone-number-input ${additionalClassName}`}>
+        <fieldset className={`phone-number-input ${additionalClassName}`} data-testid="phoneNumberInput">
             <label className="label" style={{ marginBottom: 0 }} htmlFor="phoneNumber">
                 {label}
             </label>
@@ -62,7 +62,7 @@ const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({
                     <InputError errorMessage={errorMessageNumber} />
                 </div>
             </div>
-        </div>
+        </fieldset>
     );
 };
 

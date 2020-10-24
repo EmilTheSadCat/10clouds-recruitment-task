@@ -3,13 +3,21 @@ import {
     validateNameInput,
     validatePhoneNumberInput,
     validateBirthDateInput,
-    validateIfOpionSelected,
+    validateIfOptionSelected,
 } from '../../utils/validation';
 import './_createAccountForm.scss';
 import DateInput from '../inputs/DateInput';
 import PhoneNumberInput from '../inputs/PhoneNumberInput';
 import TextInput from '../inputs/TextInput';
 import RadioInput, { RadioInputOptions } from '../inputs/RadioInput';
+
+type Errors = {
+    name: string;
+    prefix: string;
+    phoneNumber: string;
+    playChess: string;
+    birthDate: string;
+};
 
 const initialErrors = {
     name: '',
@@ -47,17 +55,17 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({ handleNext }) => 
         []
     );
 
-    const validate = () => {
+    const validate = (): Errors => {
         const nameError = validateNameInput(values.name);
-        const prefixError = validateIfOpionSelected(values.prefix);
+        const prefixError = validateIfOptionSelected(values.prefix);
         const phoneNumberError = validatePhoneNumberInput(values.phoneNumber);
-        const playChessError = validateIfOpionSelected(values.playChess);
+        const playChessError = validateIfOptionSelected(values.playChess);
         const birthDateError = validateBirthDateInput(
             values.birthDateDay,
             values.birthDateMonth,
             values.birthDateYear
         );
-        const errors = {
+        const errors: Errors = {
             name: nameError,
             prefix: prefixError,
             phoneNumber: phoneNumberError,
@@ -81,10 +89,10 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({ handleNext }) => 
 
     return (
         <form
-            action=""
             className="create-account-form"
             id="createAccountForm"
             onSubmit={handleSubmit}
+            data-testid="createAccountForm"
         >
             <TextInput
                 label="Your name"

@@ -25,7 +25,7 @@ const RadioInput: React.FC<RadioInputProps> = ({
     additionalClassName = '',
 }) => {
     return (
-        <div className={`radio-input ${additionalClassName}`}>
+        <fieldset className={`radio-input ${additionalClassName}`} data-testid="radioInput">
             <span className="label">{label}</span>
             <div className="radio-input__container">
                 {options.map(({ label, value }) => (
@@ -44,7 +44,7 @@ const RadioInput: React.FC<RadioInputProps> = ({
                 ))}
             </div>
             <InputError errorMessage={errorMessage} />
-        </div>
+        </fieldset>
     );
 };
 

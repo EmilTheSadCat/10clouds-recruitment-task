@@ -8,7 +8,11 @@ type InputErrorProps = {
 const InputError: React.FC<InputErrorProps> = ({ errorMessage }) => {
     const activeClassName = errorMessage ? 'active' : '';
 
-    return <span className={`input-error ${activeClassName}`}>{errorMessage}</span>;
+    return (
+        <span className={`input-error ${activeClassName}`} data-testid="inputError">
+            {errorMessage}
+        </span>
+    );
 };
 
 export default InputError;

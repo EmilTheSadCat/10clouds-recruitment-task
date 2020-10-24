@@ -1,6 +1,6 @@
 import differenceInYears from 'date-fns/differenceInYears';
 
-enum ErrorMessage {
+export enum ErrorMessage {
     TOO_YOUNG = 'You should be at least 18 years old',
     TOO_SHORT = 'Input should have at least 3 characters',
     NOT_SELECTED = 'Select option',
@@ -25,7 +25,7 @@ export const validateBirthDateInput = (days: string, months: string, years: stri
     return '';
 };
 
-export const validateIfOpionSelected = (value: string) => {
+export const validateIfOptionSelected = (value: string) => {
     if (value === '') return ErrorMessage.NOT_SELECTED;
     return '';
 };
