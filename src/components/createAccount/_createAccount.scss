@@ -1,20 +1,29 @@
 @import '../../scss/variables';
 
 .create-account {
-    height: 100%;
-    width: 100%;
+    height: max-content;
+    width: max-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    @media only screen and (min-width: $breakpoint-desktop) {
+        margin-right: -6rem;
+        align-items: center;
+    }
 
     &__wrapper {
         position: relative;
-        background-color: white;
-        width: 70vw;
+        background-color: $color-white;
+        margin: 0 1.5rem;
         min-width: 29rem;
         max-width: 72.8rem;
         min-height: 50rem;
         height: 80vh;
+
+        @media only screen and (min-width: $breakpoint-sm) {
+            width: 70vw;
+            margin: 0;
+        }
 
         @media only screen and (min-width: $breakpoint-desktop) {
             width: 72.8rem;
@@ -26,13 +35,24 @@
         font-weight: $font-weight-light;
         margin-top: 2.5rem;
         margin-bottom: 2.8rem;
+        margin-left: 3rem;
         font-size: 3.6rem;
-        color: white;
+        color: $color-white;
+
+        @media only screen and (min-width: $breakpoint-md) {
+            margin-left: 4.5rem;
+        }
 
         @media only screen and (min-width: $breakpoint-desktop) {
+            margin-left: 15rem;
             font-size: 4.8rem;
             margin-top: 5.6rem;
             margin-bottom: 4.8rem;
+
+            @media only screen and (max-height: 47.5em) {
+                margin-top: 3.6rem;
+                margin-bottom: 2.8rem;
+            }
         }
     }
 }
